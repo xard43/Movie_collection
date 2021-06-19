@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Move_Collection.Database;
+using Movie_Collection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,8 @@ namespace Move_Collection
 			{
 				c.SwaggerDoc("v1", new OpenApiInfo { Title = "Move_Collection", Version = "v1" });
 			});
+
+			services.AddTransient<IMovieOperations, MovieOperations>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

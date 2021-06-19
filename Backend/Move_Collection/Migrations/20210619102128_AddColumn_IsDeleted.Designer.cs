@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Move_Collection.Database;
 
 namespace Movie_Collection.Migrations
 {
     [DbContext(typeof(MovieCollectionDbContext))]
-    partial class MovieCollectionDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210619102128_AddColumn_IsDeleted")]
+    partial class AddColumn_IsDeleted
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,10 +36,10 @@ namespace Movie_Collection.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
-                    b.Property<int?>("YearOfProduction")
+                    b.Property<int>("YearOfProduction")
                         .HasColumnType("int");
 
                     b.HasKey("ID");

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Move_Collection.Database;
 
 namespace Movie_Collection.Migrations
 {
     [DbContext(typeof(MovieCollectionDbContext))]
-    partial class MovieCollectionDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210619120518_AddingAtributesToColumns")]
+    partial class AddingAtributesToColumns
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
